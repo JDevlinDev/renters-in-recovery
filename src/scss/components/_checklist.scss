@@ -68,10 +68,15 @@
     color: var(--theme-heading);
   }
 
+  &__action {
+    margin-top: rem(8);
+    font-size: rem(18);
+    font-weight: 600;
+  }
+
   &__link {
-    display: inline-block;
-    margin-top: rem(10);
     font-weight: 700;
+    white-space: nowrap;
     color: var(--theme-accent);
     text-decoration: underline;
     text-underline-offset: 0.2em;
