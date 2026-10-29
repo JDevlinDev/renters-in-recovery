@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+// "Locked out right now?" checklist in the hero
+.emergency {
+  padding: rem(24);
+  border-top: 6px solid var(--theme-accent);
+  border-radius: rem(4);
+  background-color: var(--theme-surface);
+  color: var(--theme-text);
+
+  @include breakpoints("md") {
+    padding: rem(32);
+  }
+
+  &__title {
+    margin-bottom: rem(16);
+    font-size: rem(26);
+    text-transform: uppercase;
+  }
+
+  &__steps {
+    display: grid;
+    gap: rem(12);
+    counter-reset: step;
+  }
+
+  &__step {
+    position: relative;
+    padding-left: rem(40);
+    counter-increment: step;
+
+    &::before {
+      content: counter(step);
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      place-items: center;
+      width: rem(28);
+      height: rem(28);
+      border-radius: 50%;
+      background-color: var(--theme-accent);
+      font-family: $font-heading;
+      font-weight: 700;
+      color: var(--theme-on-dark-heading);
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    color: var(--theme-accent);
+    text-decoration: underline;
+  }
+
+  &__note {
+    margin-top: rem(16);
+    padding-top: rem(16);
+    border-top: 1px solid var(--theme-border);
+    font-size: rem(15);
+    color: var(--theme-muted);
+  }
+}

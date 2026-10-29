@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+// Red-flag tactics, on the dark section
+.flags {
+  display: grid;
+  gap: rem(16);
+
+  @include breakpoints("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__item {
+    padding: rem(20) rem(20) rem(20) rem(24);
+    border-left: 4px solid var(--theme-accent);
+    background-color: var(--theme-dark-raised);
+  }
+
+  &__title {
+    margin-bottom: rem(6);
+    font-size: rem(21);
+    color: var(--theme-on-dark-heading);
+  }
+}
