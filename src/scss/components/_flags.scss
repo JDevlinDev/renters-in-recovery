@@ -13,6 +13,13 @@
     padding: rem(20) rem(20) rem(20) rem(24);
     border-left: 4px solid var(--theme-accent);
     background-color: var(--theme-dark-raised);
+
+    // An odd item out fills the last row instead of leaving a gap
+    &:last-child:nth-child(odd) {
+      @include breakpoints("md") {
+        grid-column: 1 / -1;
+      }
+    }
   }
 
   &__title {
