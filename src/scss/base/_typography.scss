@@ -1,9 +1,16 @@
 @use "../abstracts" as *;
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: rem(80);
+}
+
 body {
   font-family: $font-body;
+  font-size: rem(17);
   line-height: 1.6;
   color: var(--theme-text);
+  background-color: var(--theme-bg);
 }
 
 h1,
@@ -14,18 +21,26 @@ h5,
 h6 {
   font-family: $font-heading;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   text-wrap: balance;
   color: var(--theme-heading);
 }
 
-code {
-  padding: 0.1em 0.4em;
-  border: 1px solid var(--theme-border);
-  border-radius: 0.375em;
-  background-color: var(--theme-surface-raised);
-  font-family: $font-code;
-  font-size: 0.85em;
-  color: var(--theme-accent);
-  white-space: nowrap;
+p {
+  text-wrap: pretty;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+strong {
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 3px solid var(--theme-highlight);
+  outline-offset: 3px;
 }

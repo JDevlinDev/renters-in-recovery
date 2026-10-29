@@ -1,9 +1,15 @@
-// Dark background with a soft brand-blue glow at the top
-body {
-  background-color: var(--theme-bg);
-  background-image: radial-gradient(
-    ellipse 80% 50% at 50% 0%,
-    color-mix(in srgb, var(--theme-glow) 35%, transparent),
-    transparent
-  );
+@use "../abstracts" as *;
+
+// Paired grid used by the rights and red-flag sections
+.grid {
+  display: grid;
+  gap: rem(20);
+
+  @include breakpoints("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoints("lg") {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
