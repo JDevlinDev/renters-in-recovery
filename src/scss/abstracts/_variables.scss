@@ -1,18 +1,18 @@
 // Sass variables and maps (colors, font stacks, spacing scales)
 
-// Legal-aid navy and paper, with a protest-sign red and a caution gold
+// Calm deep teal and soft mist, with a steady teal accent and a seafoam highlight
 $palette: (
-  "navy-950": hsl(222, 47%, 11%),
-  "navy-900": hsl(222, 44%, 15%),
-  "navy-700": hsl(222, 30%, 28%),
-  "navy-300": hsl(222, 25%, 78%),
-  "paper-50": hsl(40, 33%, 97%),
-  "paper-100": hsl(40, 28%, 92%),
-  "paper-300": hsl(40, 14%, 80%),
-  "ink-600": hsl(222, 12%, 36%),
-  "red-600": hsl(4, 74%, 44%),
-  "red-700": hsl(4, 74%, 36%),
-  "gold-400": hsl(43, 92%, 56%),
+  "tide-950": hsl(195, 35%, 16%),
+  "tide-900": hsl(195, 30%, 21%),
+  "tide-700": hsl(195, 22%, 32%),
+  "tide-300": hsl(185, 22%, 80%),
+  "mist-50": hsl(160, 20%, 97%),
+  "mist-100": hsl(165, 18%, 93%),
+  "mist-300": hsl(170, 12%, 82%),
+  "ink-600": hsl(195, 10%, 36%),
+  "teal-600": hsl(178, 55%, 28%),
+  "teal-700": hsl(178, 58%, 21%),
+  "seafoam-400": hsl(160, 40%, 66%),
   "white": hsl(0, 0%, 100%),
 );
 
