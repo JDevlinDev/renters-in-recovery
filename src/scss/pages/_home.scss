@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-// Paired grid used by the rights and red-flag sections
+// Card grid used by the report and help sections
 .grid {
   display: grid;
   gap: rem(20);
@@ -11,5 +11,11 @@
 
   @include breakpoints("lg") {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--two {
+    @include breakpoints("lg") {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

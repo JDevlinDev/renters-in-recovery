@@ -3,7 +3,9 @@
 .case-file {
   padding: rem(28) rem(20);
   border: 1px solid var(--theme-border);
+  border-radius: $radius * 1.5;
   background-color: var(--theme-surface);
+  box-shadow: $shadow;
 
   @include breakpoints("md") {
     padding: rem(48);
@@ -15,20 +17,18 @@
 
   &__label {
     display: inline-block;
-    margin-bottom: rem(12);
-    padding: rem(2) rem(10);
-    border: 2px solid var(--theme-accent);
-    font-family: $font-heading;
+    margin-bottom: rem(14);
+    padding: rem(3) rem(12);
+    border-radius: 999px;
+    background-color: var(--theme-surface-tint);
     font-size: rem(14);
     font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--theme-accent);
+    color: var(--theme-accent-strong);
   }
 
   &__title {
     margin-bottom: rem(8);
-    font-size: clamp(rem(28), 4vw, rem(40));
+    font-size: clamp(rem(26), 3.5vw, rem(36));
   }
 
   &__meta {
@@ -38,8 +38,8 @@
 
   &__stats {
     display: grid;
-    gap: rem(12);
-    margin-bottom: rem(32);
+    margin-bottom: rem(36);
+    border-block: 1px solid var(--theme-border);
 
     @include breakpoints("md") {
       grid-template-columns: repeat(3, 1fr);
@@ -47,19 +47,36 @@
   }
 
   &__stat {
-    padding: rem(16) rem(20);
-    background-color: var(--theme-dark);
+    padding: rem(20) 0;
     font-size: rem(15);
-    color: var(--theme-on-dark);
+    color: var(--theme-muted);
+
+    & + & {
+      border-top: 1px solid var(--theme-border);
+    }
+
+    @include breakpoints("md") {
+      padding: rem(24);
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      & + & {
+        border-top: 0;
+        border-left: 1px solid var(--theme-border);
+      }
+    }
   }
 
   &__figure-num {
     display: block;
+    margin-bottom: rem(4);
     font-family: $font-heading;
-    font-size: rem(40);
-    font-weight: 700;
+    font-size: rem(38);
+    font-weight: 600;
     line-height: 1.1;
-    color: var(--theme-highlight);
+    color: var(--theme-accent-strong);
   }
 
   &__body {
@@ -80,16 +97,17 @@
 
   &__point {
     position: relative;
-    padding-left: rem(24);
+    padding-left: rem(26);
 
     &::before {
       content: "";
       position: absolute;
-      top: 0.6em;
+      top: 0.55em;
       left: 0;
       width: rem(10);
       height: rem(10);
-      background-color: var(--theme-accent);
+      border: 2px solid var(--theme-accent);
+      border-radius: 50%;
     }
   }
 

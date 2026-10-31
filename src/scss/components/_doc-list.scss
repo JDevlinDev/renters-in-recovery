@@ -1,22 +1,43 @@
 @use "../abstracts" as *;
 
+// Filings as file cards with a PDF badge
 .doc-list {
-  border-top: 2px solid var(--theme-dark);
+  display: grid;
+  gap: rem(12);
+
+  @include breakpoints("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   &__item {
     display: grid;
-    gap: rem(4) rem(24);
-    padding-block: rem(16);
-    border-bottom: 1px solid var(--theme-border);
+    grid-template-columns: auto 1fr;
+    gap: rem(2) rem(16);
+    align-content: start;
+    padding: rem(18) rem(20);
+    border: 1px solid var(--theme-border);
+    border-radius: $radius;
+    background-color: var(--theme-surface);
 
-    @include breakpoints("md") {
-      grid-template-columns: 1fr auto;
-      align-items: center;
+    &::before {
+      content: "PDF";
+      grid-row: span 3;
+      display: grid;
+      place-items: center;
+      width: rem(44);
+      height: rem(52);
+      border-radius: rem(6);
+      background-color: var(--theme-surface-tint);
+      font-size: rem(12);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--theme-accent-strong);
     }
   }
 
   &__title {
     font-weight: 700;
+    line-height: 1.35;
   }
 
   &__meta {
@@ -25,12 +46,17 @@
   }
 
   &__link {
-    grid-row: span 2;
     justify-self: start;
+    margin-top: rem(6);
+    font-size: rem(15);
     font-weight: 700;
     color: var(--theme-accent);
     text-decoration: underline;
     text-underline-offset: 0.2em;
+
+    &::after {
+      content: " \2192";
+    }
 
     &:hover {
       color: var(--theme-accent-strong);

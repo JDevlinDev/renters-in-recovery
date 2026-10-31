@@ -1,16 +1,16 @@
 @use "../abstracts" as *;
 
 .site-footer {
-  padding-block: rem(48);
-  border-top: 4px solid var(--theme-accent);
+  padding-block: rem(56);
   background-color: var(--theme-dark);
   font-size: rem(15);
   color: var(--theme-on-dark);
 
   &__title {
     margin-bottom: rem(12);
-    font-size: rem(22);
-    text-transform: uppercase;
+    font-family: $font-heading;
+    font-size: rem(24);
+    font-weight: 600;
     color: var(--theme-on-dark-heading);
   }
 

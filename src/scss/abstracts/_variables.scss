@@ -1,6 +1,6 @@
 // Sass variables and maps (colors, font stacks, spacing scales)
 
-// Calm deep teal and soft mist, with a steady teal accent and a seafoam highlight
+// Calm deep teal and soft mist, warmed with sand, a steady teal accent and a seafoam highlight
 $palette: (
   "tide-950": hsl(195, 35%, 16%),
   "tide-900": hsl(195, 30%, 21%),
@@ -8,8 +8,10 @@ $palette: (
   "tide-300": hsl(185, 22%, 80%),
   "mist-50": hsl(160, 20%, 97%),
   "mist-100": hsl(165, 18%, 93%),
-  "mist-300": hsl(170, 12%, 82%),
+  "mist-300": hsl(170, 12%, 85%),
+  "sand-100": hsl(42, 38%, 94%),
   "ink-600": hsl(195, 10%, 36%),
+  "teal-100": hsl(170, 38%, 91%),
   "teal-600": hsl(178, 55%, 28%),
   "teal-700": hsl(178, 58%, 21%),
   "seafoam-400": hsl(160, 40%, 66%),
@@ -17,6 +19,10 @@ $palette: (
 );
 
 // Both SIL Open Font License
-$font-body: "Public Sans", sans-serif;
-$font-heading: "Oswald", sans-serif;
+$font-body: "Atkinson Hyperlegible", sans-serif;
+$font-heading: "Fraunces", Georgia, serif;
 $max-width: 72rem;
+$radius: 0.875rem;
+$shadow:
+  0 1px 2px hsl(195 35% 16% / 0.06),
+  0 8px 24px hsl(195 35% 16% / 0.06);

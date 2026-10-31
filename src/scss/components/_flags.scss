@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-// Red-flag tactics, on the dark section
+// Warning signs, as soft cards on the sand section
 .flags {
   display: grid;
   gap: rem(16);
@@ -9,22 +9,32 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  &__item {
-    padding: rem(20) rem(20) rem(20) rem(24);
-    border-left: 4px solid var(--theme-accent);
-    background-color: var(--theme-dark-raised);
+  @include breakpoints("lg") {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    // An odd item out fills the last row instead of leaving a gap
-    &:last-child:nth-child(odd) {
-      @include breakpoints("md") {
-        grid-column: 1 / -1;
-      }
+  &__item {
+    padding: rem(24);
+    border-radius: $radius;
+    background-color: var(--theme-surface);
+    box-shadow: $shadow;
+
+    &::before {
+      content: "!";
+      display: grid;
+      place-items: center;
+      width: rem(32);
+      height: rem(32);
+      margin-bottom: rem(14);
+      border-radius: 50%;
+      background-color: var(--theme-surface-tint);
+      font-weight: 700;
+      color: var(--theme-accent-strong);
     }
   }
 
   &__title {
     margin-bottom: rem(6);
     font-size: rem(21);
-    color: var(--theme-on-dark-heading);
   }
 }

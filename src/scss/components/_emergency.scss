@@ -5,9 +5,9 @@
   max-width: 44rem;
   padding: rem(24);
   border: 1px solid var(--theme-border);
-  border-top: 6px solid var(--theme-accent);
-  border-radius: rem(4);
+  border-radius: $radius * 1.5;
   background-color: var(--theme-surface);
+  box-shadow: $shadow;
   color: var(--theme-text);
 
   @include breakpoints("md") {
@@ -15,20 +15,19 @@
   }
 
   &__title {
-    margin-bottom: rem(16);
-    font-size: rem(26);
-    text-transform: uppercase;
+    margin-bottom: rem(20);
+    font-size: rem(25);
   }
 
   &__steps {
     display: grid;
-    gap: rem(12);
+    gap: rem(14);
     counter-reset: step;
   }
 
   &__step {
     position: relative;
-    padding-left: rem(40);
+    padding-left: rem(44);
     counter-increment: step;
 
     &::before {
@@ -38,13 +37,12 @@
       left: 0;
       display: grid;
       place-items: center;
-      width: rem(28);
-      height: rem(28);
+      width: rem(30);
+      height: rem(30);
       border-radius: 50%;
-      background-color: var(--theme-accent);
-      font-family: $font-heading;
+      background-color: var(--theme-surface-tint);
       font-weight: 700;
-      color: var(--theme-on-dark-heading);
+      color: var(--theme-accent-strong);
     }
   }
 
@@ -55,9 +53,10 @@
   }
 
   &__note {
-    margin-top: rem(16);
-    padding-top: rem(16);
-    border-top: 1px solid var(--theme-border);
+    margin-top: rem(20);
+    padding: rem(12) rem(16);
+    border-radius: $radius;
+    background-color: var(--theme-surface-alt);
     font-size: rem(15);
     color: var(--theme-muted);
   }

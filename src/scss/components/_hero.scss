@@ -1,73 +1,82 @@
 @use "../abstracts" as *;
 
 .hero {
-  padding-block: rem(56) rem(64);
-  background-color: var(--theme-dark);
-  color: var(--theme-on-dark);
+  padding-block: rem(48) rem(64);
+  background: linear-gradient(180deg, var(--theme-surface-tint), var(--theme-bg));
 
   @include breakpoints("md") {
-    padding-block: rem(88);
+    padding-block: rem(80) rem(96);
   }
 
   &__inner {
     display: grid;
     gap: rem(40);
-    align-items: center;
+    align-items: start;
 
     @include breakpoints("lg") {
-      grid-template-columns: 1.4fr 1fr;
-      gap: rem(56);
+      grid-template-columns: 1.25fr 1fr;
+      gap: rem(64);
     }
   }
 
   // Newest update, linking to the document library
   &__latest {
-    display: block;
-    max-width: 36rem;
-    margin-bottom: rem(24);
-    color: var(--theme-on-dark);
-    text-decoration: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem(4) rem(10);
+    max-width: 38rem;
+    margin-bottom: rem(28);
+    padding: rem(6) rem(16) rem(6) rem(6);
+    border: 1px solid var(--theme-border);
+    border-radius: rem(20);
+    background-color: var(--theme-surface);
+    font-size: rem(15);
+    color: var(--theme-text);
 
     &:hover .hero__latest-text {
-      color: var(--theme-highlight);
+      color: var(--theme-accent);
     }
   }
 
   &__latest-text {
-    display: block;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: underline;
+    text-decoration-color: var(--theme-highlight);
+    text-decoration-thickness: 2px;
     text-underline-offset: 0.2em;
   }
 
   &__eyebrow {
-    display: inline-block;
-    margin-bottom: rem(8);
-    padding: rem(4) rem(10);
-    background-color: var(--theme-highlight);
-    font-family: $font-heading;
-    font-size: rem(14);
+    padding: rem(3) rem(12);
+    border-radius: 999px;
+    background-color: var(--theme-accent);
+    font-size: rem(13);
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--theme-dark);
+    color: var(--theme-on-dark-heading);
   }
 
   &__title {
     margin-bottom: rem(24);
-    font-size: clamp(rem(42), 8vw, rem(76));
-    text-transform: uppercase;
-    color: var(--theme-on-dark-heading);
+    font-size: clamp(rem(40), 6vw, rem(64));
   }
 
+  // Soft marker underline
   &__highlight {
-    color: var(--theme-highlight);
+    background-image: linear-gradient(
+      transparent 62%,
+      var(--theme-highlight) 62%,
+      var(--theme-highlight) 90%,
+      transparent 90%
+    );
+    box-decoration-break: clone;
   }
 
   &__lead {
     max-width: 36rem;
     margin-bottom: rem(32);
     font-size: rem(19);
+    color: var(--theme-muted);
 
     @include breakpoints("md") {
       font-size: rem(21);

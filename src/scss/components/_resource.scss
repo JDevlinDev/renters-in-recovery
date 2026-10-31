@@ -8,37 +8,47 @@
   height: 100%;
   padding: rem(24);
   border: 1px solid var(--theme-border);
-  border-left: 4px solid var(--theme-accent);
+  border-radius: $radius;
   background-color: var(--theme-surface);
-  transition: border-color 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    transform 0.15s;
 
   &:hover {
     border-color: var(--theme-accent);
+    box-shadow: $shadow;
+    transform: translateY(-2px);
   }
 
   &__for {
-    font-size: rem(13);
+    font-size: rem(14);
     font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: var(--theme-accent);
   }
 
   &__name {
-    font-size: rem(22);
+    font-size: rem(21);
   }
 
   &__phone {
-    font-weight: 700;
+    font-family: $font-heading;
+    font-size: rem(26);
+    font-weight: 600;
+    color: var(--theme-accent-strong);
   }
 
   &__url {
     margin-top: auto;
+    padding-top: rem(8);
     font-size: rem(15);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--theme-muted);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
     overflow-wrap: anywhere;
+
+    &::after {
+      content: " \2192";
+      color: var(--theme-accent);
+    }
   }
 }

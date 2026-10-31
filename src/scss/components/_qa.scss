@@ -1,0 +1,47 @@
+@use "../abstracts" as *;
+
+// Question-and-answer list for the rights section
+.qa {
+  border-top: 1px solid var(--theme-border);
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 rem(20);
+    padding-block: rem(28);
+    border-bottom: 1px solid var(--theme-border);
+
+    > :not(.qa__number) {
+      grid-column: 2;
+    }
+  }
+
+  &__number {
+    grid-row: span 3;
+    display: grid;
+    place-items: center;
+    width: rem(40);
+    height: rem(40);
+    border-radius: 50%;
+    background-color: var(--theme-surface-tint);
+    font-size: rem(14);
+    font-weight: 700;
+    color: var(--theme-accent-strong);
+  }
+
+  &__title {
+    margin-bottom: rem(10);
+    font-size: rem(23);
+  }
+
+  &__cite {
+    justify-self: start;
+    margin-top: rem(14);
+    padding: rem(3) rem(12);
+    border: 1px solid var(--theme-border);
+    border-radius: 999px;
+    background-color: var(--theme-surface);
+    font-size: rem(14);
+    color: var(--theme-muted);
+  }
+}
