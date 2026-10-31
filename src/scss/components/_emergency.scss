@@ -1,9 +1,8 @@
 @use "../abstracts" as *;
 
-// "Locked out right now?" steps, above the legal aid list
+// "Locked out right now?" steps, in the hero
 .emergency {
   max-width: 44rem;
-  margin-bottom: rem(40);
   padding: rem(24);
   border: 1px solid var(--theme-border);
   border-top: 6px solid var(--theme-accent);
