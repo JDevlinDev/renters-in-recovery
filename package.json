@@ -5,7 +5,7 @@
   "description": "Renters in Recovery: tenant rights for Illinois sober living residents",
   "scripts": {
     "start": "npx parcel --host 0.0.0.0 --port 4321 --dist-dir dist-dev",
-    "build": "npm run cleanup && npx parcel build --public-url ./",
+    "build": "npm run cleanup && npx parcel build --public-url ./ && cp -r public/. dist/",
     "push-gh": "npm run build && gh-pages --dist dist --branch gh-pages --cname www.illinoisrentersinrecovery.org --message \"Deploy $(git rev-parse --short HEAD)\"",
     "format": "prettier --write src",
     "cleanup": "rm -rf dist dist-dev .parcel-cache"

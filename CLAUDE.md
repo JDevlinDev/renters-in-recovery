@@ -10,7 +10,7 @@ Renters in Recovery: a one-page tenant-rights and advocacy site for Illinois sob
 ## Scripts
 
 - `npm start`: Parcel dev server on port 4321. Writes to `dist-dev/`, never `dist/`.
-- `npm run build`: clean production build in `dist/` with relative paths (`--public-url ./`).
+- `npm run build`: clean production build in `dist/` with relative paths (`--public-url ./`), then copies `public/` into `dist/` untouched. `public/og-image.png` is the link-preview card; `og:image` needs an absolute URL, so it lives outside Parcel's hashing.
 - `npm run push-gh`: builds, then publishes `dist/` to the `gh-pages` branch. Requires the `origin` remote to use SSH.
 - `npm run format`: Prettier over `src/`.
 
